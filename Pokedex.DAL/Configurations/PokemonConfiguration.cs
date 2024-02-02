@@ -44,6 +44,142 @@ namespace Pokedex.DAL.Configurations
                     Numero = 2,
                     Name = "Herbizarre",
                     TypeId = 4,
+                },
+                new Pokemon
+                {
+                    Numero = 3,
+                    Name = "Florizarre",
+                    TypeId = 4,
+                },
+                new Pokemon
+                {
+                    Numero = 4,
+                    Name = "Salameche",
+                    TypeId = 4,
+                },
+                new Pokemon
+                {
+                    Numero = 5,
+                    Name = "Reptincel",
+                    TypeId = 4,
+                }
+                ,
+                new Pokemon
+                {
+                    Numero = 6,
+                    Name = "Dracaufeu",
+                    TypeId = 4,
+                }
+                ,
+                new Pokemon
+                {
+                    Numero = 7,
+                    Name = "Carapuce",
+                    TypeId = 2,
+                }
+                ,
+                new Pokemon
+                {
+                    Numero = 8,
+                    Name = "Carabaffe",
+                    TypeId = 2,
+                },
+                new Pokemon
+                {
+                    Numero = 9,
+                    Name = "Tortank",
+                    TypeId = 2,
+                },
+                new Pokemon
+                {
+                    Numero = 10,
+                    Name = "Chenipan",
+                    TypeId = 13,
+                }
+                ,
+                new Pokemon
+                {
+                    Numero = 11,
+                    Name = "Chrysacier",
+                    TypeId = 13,
+                },
+                new Pokemon
+                {
+                    Numero = 12,
+                    Name = "Papilusion",
+                    TypeId = 13,
+                },
+                new Pokemon
+                {
+                    Numero = 13,
+                    Name = "Aspicot",
+                    TypeId = 13,
+                },
+                new Pokemon
+                {
+                    Numero = 14,
+                    Name = "Coconfort",
+                    TypeId = 13,
+                },
+                new Pokemon
+                {
+                    Numero = 15,
+                    Name = "Dardargnan",
+                    TypeId = 13,
+                },
+                new Pokemon
+                {
+                    Numero = 16,
+                    Name = "Roucool",
+                    TypeId = 18,
+                },
+                new Pokemon
+                {
+                    Numero = 17,
+                    Name = "Roucoups",
+                    TypeId = 18,
+                },
+                new Pokemon
+                {
+                    Numero = 18,
+                    Name = "Roucarnage",
+                    TypeId = 18,
+                },
+                new Pokemon
+                {
+                    Numero = 19,
+                    Name = "Rattata",
+                    TypeId = 7,
+                },
+                new Pokemon
+                {
+                    Numero = 20,
+                    Name = "Rattatac",
+                    TypeId = 7,
+                },
+                new Pokemon
+                {
+                    Numero = 21,
+                    Name = "Piafabec",
+                    TypeId = 18,
+                },
+                new Pokemon
+                {
+                    Numero = 22,
+                    Name = "Rapasdepic",
+                    TypeId = 18,
+                },
+                new Pokemon
+                {
+                    Numero = 23,
+                    Name = "Abo",
+                    TypeId = 14,
+                },
+                new Pokemon
+                {
+                    Numero = 24,
+                    Name = "Arbok",
+                    TypeId = 14,
                 }
             );
 

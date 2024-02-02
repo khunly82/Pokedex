@@ -119,7 +119,18 @@ namespace Pokedex.DAL.Migrations
                     { 4, "PLANTE" },
                     { 5, "PSY" },
                     { 6, "ROCHE" },
-                    { 7, "NORMAL" }
+                    { 7, "NORMAL" },
+                    { 8, "ACIER" },
+                    { 9, "COMBAT" },
+                    { 10, "DRAGON" },
+                    { 11, "FEE" },
+                    { 12, "GLACE" },
+                    { 13, "INSECTE" },
+                    { 14, "POISON" },
+                    { 15, "SOL" },
+                    { 16, "SPECTRE" },
+                    { 17, "TENEBRE" },
+                    { 18, "VOL" }
                 });
 
             migrationBuilder.InsertData(
@@ -139,6 +150,28 @@ namespace Pokedex.DAL.Migrations
                 {
                     { 1, null, "Bulbizarre", 4 },
                     { 2, null, "Herbizarre", 4 },
+                    { 3, null, "Florizarre", 4 },
+                    { 4, null, "Salameche", 4 },
+                    { 5, null, "Reptincel", 4 },
+                    { 6, null, "Dracaufeu", 4 },
+                    { 7, null, "Carapuce", 2 },
+                    { 8, null, "Carabaffe", 2 },
+                    { 9, null, "Tortank", 2 },
+                    { 10, null, "Chenipan", 13 },
+                    { 11, null, "Chrysacier", 13 },
+                    { 12, null, "Papilusion", 13 },
+                    { 13, null, "Aspicot", 13 },
+                    { 14, null, "Coconfort", 13 },
+                    { 15, null, "Dardargnan", 13 },
+                    { 16, null, "Roucool", 18 },
+                    { 17, null, "Roucoups", 18 },
+                    { 18, null, "Roucarnage", 18 },
+                    { 19, null, "Rattata", 7 },
+                    { 20, null, "Rattatac", 7 },
+                    { 21, null, "Piafabec", 18 },
+                    { 22, null, "Rapasdepic", 18 },
+                    { 23, null, "Abo", 14 },
+                    { 24, null, "Arbok", 14 },
                     { 25, null, "Pikachu", 1 }
                 });
 
@@ -161,7 +194,29 @@ namespace Pokedex.DAL.Migrations
                 {
                     { 1, 25, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" },
                     { 2, 1, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" },
-                    { 3, 2, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png" }
+                    { 3, 2, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png" },
+                    { 4, 3, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png" },
+                    { 5, 4, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png" },
+                    { 6, 5, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png" },
+                    { 7, 6, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" },
+                    { 8, 7, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png" },
+                    { 9, 8, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png" },
+                    { 10, 9, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png" },
+                    { 11, 10, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10.png" },
+                    { 12, 11, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/11.png" },
+                    { 13, 12, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/12.png" },
+                    { 14, 13, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/13.png" },
+                    { 15, 14, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/14.png" },
+                    { 16, 15, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/15.png" },
+                    { 17, 16, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/16.png" },
+                    { 18, 17, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/17.png" },
+                    { 19, 18, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/18.png" },
+                    { 20, 19, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/19.png" },
+                    { 21, 20, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/20.png" },
+                    { 22, 21, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/21.png" },
+                    { 23, 22, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/22.png" },
+                    { 24, 23, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/23.png" },
+                    { 25, 24, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/24.png" }
                 });
 
             migrationBuilder.CreateIndex(
