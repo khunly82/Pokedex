@@ -43,12 +43,26 @@ PokedexContext pokedexContext = new PokedexContext();
 
 //Attack? attack = pokedexContext.Attacks.SingleOrDefault(a => a.Name.Contains("Foudre"));
 
-Attack? attack = pokedexContext.Attacks.Find(1);
-// <=> pokedexContext.Attacks.SingleOrDefault(a => a.Id == 1)
+//Attack? attack = pokedexContext.Attacks.Find(1);
+//// <=> pokedexContext.Attacks.SingleOrDefault(a => a.Id == 1)
 
-Console.WriteLine(attack?.Name ?? "Attaque introuvable");
+//Console.WriteLine(attack?.Name ?? "Attaque introuvable");
 
 //foreach (Attack attack in attacks)
 //{
 //    Console.WriteLine(attack.Name);
 //}
+
+// Afficher le nom et numero de tous les Pokemons
+
+// Afficher le nom, le numero de tous les Pokemons du type 18
+
+// Afficher le nom, le numero de tous les Pokemons dont le nom du type est poison
+
+// Afficher le nom, le numero de tous les Pokemons du type 7 ou du type 4
+
+// Afficher le nom, le numero de tous les Pokemons dont le nom commence par 'R'
+
+// Afficher le nom, le nom du type de tous les pokemons triés par nom du type
+
+// Afficher le nom, le nom du type du pokemon dont l'id est 16
