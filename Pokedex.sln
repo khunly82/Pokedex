@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pokedex", "Pokedex\Pokedex.csproj", "{72AAED24-16FF-47AD-8973-AFB341051336}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pokedex", "Pokedex\Pokedex.csproj", "{72AAED24-16FF-47AD-8973-AFB341051336}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pokedex.DAL", "Pokedex.DAL\Pokedex.DAL.csproj", "{6F80167F-415A-4F93-B8E7-F80B6CCF112F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pokedex.DAL", "Pokedex.DAL\Pokedex.DAL.csproj", "{6F80167F-415A-4F93-B8E7-F80B6CCF112F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

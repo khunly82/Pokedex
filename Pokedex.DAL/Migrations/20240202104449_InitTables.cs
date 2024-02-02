@@ -2,6 +2,8 @@
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace Pokedex.DAL.Migrations
 {
     /// <inheritdoc />
@@ -39,8 +41,7 @@ namespace Pokedex.DAL.Migrations
                         name: "FK_Attacks_Types_TypeId",
                         column: x => x.TypeId,
                         principalTable: "Types",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -48,8 +49,8 @@ namespace Pokedex.DAL.Migrations
                 columns: table => new
                 {
                     Numero = table.Column<int>(type: "int", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsLegendary = table.Column<bool>(type: "bit", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    IsLegendary = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TypeId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -60,8 +61,7 @@ namespace Pokedex.DAL.Migrations
                         name: "FK_Pokemons_Types_TypeId",
                         column: x => x.TypeId,
                         principalTable: "Types",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -108,6 +108,62 @@ namespace Pokedex.DAL.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Types",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "ELECTRIK" },
+                    { 2, "EAU" },
+                    { 3, "FEU" },
+                    { 4, "PLANTE" },
+                    { 5, "PSY" },
+                    { 6, "ROCHE" },
+                    { 7, "NORMAL" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Attacks",
+                columns: new[] { "Id", "Name", "TypeId" },
+                values: new object[,]
+                {
+                    { 1, "Charge", 7 },
+                    { 2, "Fatal Foudre", 1 },
+                    { 3, "Tranche Herbe", 4 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Pokemons",
+                columns: new[] { "Numero", "Description", "Name", "TypeId" },
+                values: new object[,]
+                {
+                    { 1, null, "Bulbizarre", 4 },
+                    { 2, null, "Herbizarre", 4 },
+                    { 25, null, "Pikachu", 1 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AttackPokemon",
+                columns: new[] { "AttacksId", "PokemonsNumero" },
+                values: new object[,]
+                {
+                    { 1, 1 },
+                    { 1, 2 },
+                    { 1, 25 },
+                    { 2, 25 },
+                    { 3, 2 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Images",
+                columns: new[] { "Id", "PokemonNumero", "Url" },
+                values: new object[,]
+                {
+                    { 1, 25, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" },
+                    { 2, 1, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" },
+                    { 3, 2, "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png" }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AttackPokemon_PokemonsNumero",
                 table: "AttackPokemon",
@@ -122,6 +178,12 @@ namespace Pokedex.DAL.Migrations
                 name: "IX_Images_PokemonNumero",
                 table: "Images",
                 column: "PokemonNumero",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Pokemons_Name",
+                table: "Pokemons",
+                column: "Name",
                 unique: true);
 
             migrationBuilder.CreateIndex(

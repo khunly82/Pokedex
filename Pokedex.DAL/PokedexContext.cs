@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Pokedex.DAL.Configurations;
 using Pokedex.DAL.Entities;
 
 namespace Pokedex.DAL
@@ -14,6 +15,14 @@ namespace Pokedex.DAL
         {
             optionsBuilder.UseSqlServer(@"server=(localdb)\MSSQLLocalDB;database=pokedex;integrated security=true");
 
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new PokemonConfiguration());
+            modelBuilder.ApplyConfiguration(new ImageConfiguration());
+            modelBuilder.ApplyConfiguration(new TypeConfiguration());
+            modelBuilder.ApplyConfiguration(new AttackConfiguration());
         }
     }
 }

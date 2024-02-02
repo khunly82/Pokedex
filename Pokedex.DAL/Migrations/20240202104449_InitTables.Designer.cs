@@ -11,7 +11,7 @@ using Pokedex.DAL;
 namespace Pokedex.DAL.Migrations
 {
     [DbContext(typeof(PokedexContext))]
-    [Migration("20240202084708_InitTables")]
+    [Migration("20240202104449_InitTables")]
     partial class InitTables
     {
         /// <inheritdoc />
@@ -37,6 +37,33 @@ namespace Pokedex.DAL.Migrations
                     b.HasIndex("PokemonsNumero");
 
                     b.ToTable("AttackPokemon");
+
+                    b.HasData(
+                        new
+                        {
+                            AttacksId = 1,
+                            PokemonsNumero = 25
+                        },
+                        new
+                        {
+                            AttacksId = 2,
+                            PokemonsNumero = 25
+                        },
+                        new
+                        {
+                            AttacksId = 1,
+                            PokemonsNumero = 1
+                        },
+                        new
+                        {
+                            AttacksId = 1,
+                            PokemonsNumero = 2
+                        },
+                        new
+                        {
+                            AttacksId = 3,
+                            PokemonsNumero = 2
+                        });
                 });
 
             modelBuilder.Entity("Pokedex.DAL.Entities.Attack", b =>
@@ -59,6 +86,26 @@ namespace Pokedex.DAL.Migrations
                     b.HasIndex("TypeId");
 
                     b.ToTable("Attacks");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Charge",
+                            TypeId = 7
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Fatal Foudre",
+                            TypeId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Tranche Herbe",
+                            TypeId = 4
+                        });
                 });
 
             modelBuilder.Entity("Pokedex.DAL.Entities.Image", b =>
@@ -82,6 +129,26 @@ namespace Pokedex.DAL.Migrations
                         .IsUnique();
 
                     b.ToTable("Images");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            PokemonNumero = 25,
+                            Url = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            PokemonNumero = 1,
+                            Url = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            PokemonNumero = 2,
+                            Url = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png"
+                        });
                 });
 
             modelBuilder.Entity("Pokedex.DAL.Entities.Pokemon", b =>
@@ -93,20 +160,48 @@ namespace Pokedex.DAL.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsLegendary")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("TypeId")
                         .HasColumnType("int");
 
                     b.HasKey("Numero");
 
+                    b.HasIndex("Name")
+                        .IsUnique();
+
                     b.HasIndex("TypeId");
 
                     b.ToTable("Pokemons");
+
+                    b.HasData(
+                        new
+                        {
+                            Numero = 25,
+                            IsLegendary = false,
+                            Name = "Pikachu",
+                            TypeId = 1
+                        },
+                        new
+                        {
+                            Numero = 1,
+                            IsLegendary = false,
+                            Name = "Bulbizarre",
+                            TypeId = 4
+                        },
+                        new
+                        {
+                            Numero = 2,
+                            IsLegendary = false,
+                            Name = "Herbizarre",
+                            TypeId = 4
+                        });
                 });
 
             modelBuilder.Entity("Pokedex.DAL.Entities.PokemonType", b =>
@@ -124,6 +219,43 @@ namespace Pokedex.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Types");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "ELECTRIK"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "EAU"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "FEU"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "PLANTE"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "PSY"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "ROCHE"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "NORMAL"
+                        });
                 });
 
             modelBuilder.Entity("AttackPokemon", b =>
@@ -146,7 +278,7 @@ namespace Pokedex.DAL.Migrations
                     b.HasOne("Pokedex.DAL.Entities.PokemonType", "Type")
                         .WithMany("Attacks")
                         .HasForeignKey("TypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Type");
@@ -168,7 +300,7 @@ namespace Pokedex.DAL.Migrations
                     b.HasOne("Pokedex.DAL.Entities.PokemonType", "Type")
                         .WithMany("Pokemons")
                         .HasForeignKey("TypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Type");
