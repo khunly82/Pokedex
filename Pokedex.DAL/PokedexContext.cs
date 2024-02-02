@@ -13,7 +13,7 @@ namespace Pokedex.DAL
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"server=(localdb)\MSSQLLocalDB;database=pokedex;integrated security=true");
+            optionsBuilder.UseSqlServer(@"server=(localdb)\MSSQLLocalDB;database=pokedex;integrated security=true;trustserver certificate=true");
 
         }
 
